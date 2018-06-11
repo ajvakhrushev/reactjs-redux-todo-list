@@ -1,0 +1,39 @@
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  .offer-list__title {
+    display: flex;
+    padding: 10px;
+    font-size: 24px; }
+  .offer-list__container {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto 0 auto; }
+  .offer-list__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin: 0 0 20px 0; }
+    .offer-list__actions__button {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 2px;
+      background: #106cc8;
+      color: rgba(255, 255, 255, 0.87);
+      padding: 0 10px;
+      height: 32px;
+      text-decoration: none; }
+      .offer-list__actions__button:disabled {
+        opacity: 0.3; }
+  .offer-list__items {
+    display: flex;
+    flex-container: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; }

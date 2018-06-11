@@ -1,0 +1,33 @@
+.offer-list__item,
+.offer-list__item a {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 320px;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+  width: 240px;
+  max-width: 240px;
+  height: 320px;
+  margin: 0 20px 20px 0;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .offer-list__item__name, .offer-list__item__reduced-price,
+  .offer-list__item a__name,
+  .offer-list__item a__reduced-price {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 0 basis;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff; }
+  .offer-list__item__price,
+  .offer-list__item a__price {
+    text-align: right; }
+  .offer-list__item__reduced-price,
+  .offer-list__item a__reduced-price {
+    color: #FFEE58;
+    font-weight: bold; }
