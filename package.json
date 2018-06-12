@@ -2,6 +2,8 @@
   "name": "reactjs-redux-todo-list",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/ajvakhrushev/reactjs-redux-todo-list",
+  "homepage": "https://ajvakhrushev.github.io/reactjs-redux-todo-list",
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "@material-ui/icons": "^1.1.0",
