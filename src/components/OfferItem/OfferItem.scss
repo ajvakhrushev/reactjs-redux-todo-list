@@ -1,12 +1,17 @@
-@import 'styles/variables';
+@import 'styles/variables.scss';
 
 .offer-form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-sizing: border-box;
+
+  @media($maxWidthLS) {
+    padding: 0 5px;
+  }
 
   &__title {
-    margin: 0 0 20px 0;
+    margin: 10px 0;
     padding: 10px;
     font-size: 24px;
   }
@@ -15,69 +20,117 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: stretch;
-    align-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
 
-    &__block {
-      box-sizing: border-box;
+  }
+
+  .field-price {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 310px;
+
+    @media($maxWidthXS) {
+      min-width: 100%;
+    }
+
+    .offer-form__field {
       display: flex;
-      flex-direction: column;
-      flex: 1 0 200px;
-      padding: 10px;
+      flex-direction: row;
 
-      &__label {
-        display: block;
-        margin: 0 0 5px 0;
+      &.field-price {
+        display: flex;
+        flex: 1 1 180px;
+        min-width: 180px;
+        padding-right: 20px;
       }
 
-      &__error {
-        display: block;
-        height: 12px;
-        margin: 2px 0;
-        font-size: 12px;
-        color: red;
+      &.field-currency {
+        display: flex;
+        flex: 0 0 100px;
+        min-width: 100px;
+      }
+
+      [class^="MuiInput"] {
+        width: 100%;
       }
 
     }
 
   }
 
+  &__field {
+    margin: 10px 0;
+    min-width: 310px;
+
+    @media($maxWidthXS) {
+      min-width: 100%;
+    }
+
+    &[class^='MuiFormControl'] {
+      margin: 10px 0;
+      min-width: 310px;
+
+      @media($maxWidthXS) {
+        min-width: 100%;
+      }
+
+    }
+
+    &.field-description {
+      display: block;
+      min-width: 100%;
+      width: 100%;
+
+      [class^='MuiInput'] {
+        min-width: 100%;
+        width: 100%;
+      }
+
+      textarea {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
   &__actions {
     display: flex;
     flex-direction: row;
+    margin: 20px 0;
 
-    &__button {
+    @media($maxWidthLS) {
+      justify-content: space-between;
+    }
+
+    .submit-button {
       box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-content: center;
       align-items: center;
       border: none;
-      border-radius: 2px;
+      border-radius: 4px;
       background: $color-blue;
       color: $color-white;
-      margin: 0 10px;
-      padding: 0 10px;
-      height: 32px;
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer;
-
-      &.remove {
-        background: $color-red;
-      }
-
-      &.cancel {
-        background: $color-white;
-        color: #676767;
-        border: 1px solid #676767;
-      }
+      padding: 8px 16px;
+      min-width: 88px;
+      min-height: 40px;
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
 
       &:disabled {
         opacity: 0.5;
         cursor: default;
       }
+    }
+
+    &__button {
+      margin: 0 10px;
     }
   }
 

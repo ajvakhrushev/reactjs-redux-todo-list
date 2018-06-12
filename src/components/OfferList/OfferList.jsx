@@ -1,17 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import OfferListItem from 'components/OfferItem/OfferListItem.jsx'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { OfferListItem } from 'components/OfferListItem/OfferListItem.jsx';
 import 'components/OfferList/OfferList.scss';
 
-export default class extends Component {
+export class OfferList extends Component {
 
   static propTypes = {
     list: PropTypes.array.isRequired
-  }
-
-  constructor(props) {
-    super(props);
   }
 
   render() {
@@ -26,9 +21,7 @@ export default class extends Component {
             </h1>
           </div>
           <div className="offer-list__items">
-            {
-              list.map((next) => <OfferListItem key={next.id} data={next} />)
-            }
+            {list.map((next) => <OfferListItem key={next.id} data={next} />)}
           </div>
         </div>
       </div>

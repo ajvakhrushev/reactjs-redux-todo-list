@@ -1,7 +1,6 @@
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { DEFAULT_ITEM } from 'constants';
 import * as actions from 'actions';
-import * as utils from 'services/utils';
 const uuidv1 = require('uuid/v1');
 const cloneDeep = require('lodash.clonedeep');
 
@@ -21,7 +20,7 @@ const reducers = {
     };
 
     return { 
-      ... state,
+      ...state,
       list: [ ...list, nextItem ],
       strategy: null,
       item: {}
@@ -32,7 +31,7 @@ const reducers = {
     const { list } = state;
 
     return { 
-      ... state,
+      ...state,
       item: list.find((next) => next.id === id)
     };
   },
@@ -49,7 +48,7 @@ const reducers = {
     nextList.splice(index, 1, nextItem);
 
     return { 
-      ... state,
+      ...state,
       list: nextList,
       item: nextItem
     };
@@ -63,13 +62,13 @@ const reducers = {
     nextList.splice(index, 1);
 
     return { 
-      ... state,
+      ...state,
       list: nextList,
       item: {}
     };
   },
   [LOCATION_CHANGE]: (state, action) => {
-    const { list, item } = state;
+    const { list } = state;
     const { pathname } = action.payload;
     const values = pathname.split('/');
 
@@ -80,19 +79,19 @@ const reducers = {
     switch(values[2]) {
       case 'create':
         return { 
-          ... state,
+          ...state,
           strategy: 'create',
           item: cloneDeep(DEFAULT_ITEM)
         };
       case 'list':
         return { 
-          ... state,
+          ...state,
           strategy: null,
           item: {}
         };
       default:
         return { 
-          ... state,
+          ...state,
           strategy: 'update',
           item: list.find((next) => next.id === values[2])
         };

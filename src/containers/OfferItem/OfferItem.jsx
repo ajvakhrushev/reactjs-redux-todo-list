@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import * as actions from 'actions';
-import { OfferItem } from 'components';
+import { OfferItem as OfferItemComponent } from 'components/OfferItem/OfferItem.jsx';
 import 'components/OfferItem/OfferItem.scss';
 
 const mapStateToProps = (state) => {
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(
+export const OfferItem = connect(
   mapStateToProps, 
   mapDispatchToProps
-)(OfferItem);
+)(OfferItemComponent);

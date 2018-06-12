@@ -9,7 +9,7 @@ import registerServiceWorker from 'registerServiceWorker';
 import configureStore from 'store/configureStore';
 import routes from 'routes.jsx';
 import listData from 'mocks/list.json';
-import 'index.scss';
+import './index.scss';
 
 const persistConfig = {
   storage: localForage,

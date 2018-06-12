@@ -1,0 +1,11 @@
+.header-nav nav {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 760px; }
+  @media (max-width: 640px) {
+    .header-nav nav {
+      text-align: center; } }
+  .header-nav nav a {
+    color: rgba(255, 255, 255, 0.87); }
+    .header-nav nav a:active, .header-nav nav a:hover, .header-nav nav a:focus, .header-nav nav a:visited {
+      color: rgba(255, 255, 255, 0.87); }

@@ -1,1 +1,28 @@
-@import 'styles/variables';
+@import 'styles/variables.scss';
+
+.header-nav {
+
+  nav {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $ls-width;
+
+    @media($maxWidthXS) {
+      text-align: center;
+    }
+
+    a {
+      color: $color-white;
+
+      &:active,
+      &:hover,
+      &:focus,
+      &:visited {
+        color: $color-white;
+      }
+
+    }
+
+  }
+
+}

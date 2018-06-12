@@ -1,13 +1,13 @@
-import { REGEXP } from 'constants';
+import { REGEXP } from 'constants/index';
 const get = require('lodash.get');
 
 export const isDataValid = (data) => {
   const productImageUrl = get(data, 'productImagePointer.itemName');
 
   if (!data.name
-      || (!productImageUrl || !REGEXP.test(productImageUrl))
+      || (!productImageUrl || !REGEXP.url.test(productImageUrl))
       || !data.productName
-      || (!!data.productName && !REGEXP.test(data.productName))
+      || (!!data.retailerUrl && !REGEXP.url.test(data.retailerUrl))
      ) {
     return false;
   }
@@ -17,7 +17,7 @@ export const isDataValid = (data) => {
 
 export const getInvalidData = (data) => {
   const result = {
-    productImageUrl: {}
+    productImagePointer: {}
   };
 
   if (!data.name) {
@@ -30,9 +30,9 @@ export const getInvalidData = (data) => {
     result.productImagePointer = {
       itemName: 'This field is required'
     };
-  } else if (!REGEXP.test(productImageUrl)) {
+  } else if (!REGEXP.url.test(productImageUrl)) {
     result.productImagePointer = {
-      itemName: 'Should be URL like';
+      itemName: 'Should be URL like'
     };
   }
 
@@ -40,7 +40,7 @@ export const getInvalidData = (data) => {
     result.productName = 'This field is required';
   }
 
-  if (!!data.productName && !REGEXP.test(data.productName)) {
+  if (!!data.retailerUrl && !REGEXP.url.test(data.retailerUrl)) {
     result.retailerUrl = 'Should be URL like';
   }
 

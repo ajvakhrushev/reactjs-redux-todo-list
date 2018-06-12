@@ -1,58 +1,92 @@
 .offer-form {
   display: flex;
   flex-direction: column;
-  width: 100%; }
+  width: 100%;
+  box-sizing: border-box; }
+  @media (max-width: 760px) {
+    .offer-form {
+      padding: 0 5px; } }
   .offer-form__title {
-    margin: 0 0 20px 0;
+    margin: 10px 0;
     padding: 10px;
     font-size: 24px; }
   .offer-form__fields {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: stretch;
-    align-content: flex-start;
-    align-items: flex-start; }
-    .offer-form__fields__block {
-      box-sizing: border-box;
+    justify-content: space-between; }
+  .offer-form .field-price {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 310px; }
+    @media (max-width: 640px) {
+      .offer-form .field-price {
+        min-width: 100%; } }
+    .offer-form .field-price .offer-form__field {
       display: flex;
-      flex-direction: column;
-      flex: 1 0 200px;
-      padding: 10px; }
-      .offer-form__fields__block__label {
-        display: block;
-        margin: 0 0 5px 0; }
-      .offer-form__fields__block__error {
-        display: block;
-        height: 12px;
-        margin: 2px 0;
-        font-size: 12px;
-        color: red; }
+      flex-direction: row; }
+      .offer-form .field-price .offer-form__field.field-price {
+        display: flex;
+        flex: 1 1 180px;
+        min-width: 180px;
+        padding-right: 20px; }
+      .offer-form .field-price .offer-form__field.field-currency {
+        display: flex;
+        flex: 0 0 100px;
+        min-width: 100px; }
+      .offer-form .field-price .offer-form__field [class^="MuiInput"] {
+        width: 100%; }
+  .offer-form__field {
+    margin: 10px 0;
+    min-width: 310px; }
+    @media (max-width: 640px) {
+      .offer-form__field {
+        min-width: 100%; } }
+    .offer-form__field[class^='MuiFormControl'] {
+      margin: 10px 0;
+      min-width: 310px; }
+      @media (max-width: 640px) {
+        .offer-form__field[class^='MuiFormControl'] {
+          min-width: 100%; } }
+    .offer-form__field.field-description {
+      display: block;
+      min-width: 100%;
+      width: 100%; }
+      .offer-form__field.field-description [class^='MuiInput'] {
+        min-width: 100%;
+        width: 100%; }
+      .offer-form__field.field-description textarea {
+        min-width: 100%;
+        width: 100%; }
   .offer-form__actions {
     display: flex;
-    flex-direction: row; }
-    .offer-form__actions__button {
+    flex-direction: row;
+    margin: 20px 0; }
+    @media (max-width: 760px) {
+      .offer-form__actions {
+        justify-content: space-between; } }
+    .offer-form__actions .submit-button {
       box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-content: center;
       align-items: center;
       border: none;
-      border-radius: 2px;
+      border-radius: 4px;
       background: #106cc8;
       color: rgba(255, 255, 255, 0.87);
-      margin: 0 10px;
-      padding: 0 10px;
-      height: 32px;
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer; }
-      .offer-form__actions__button.remove {
-        background: #ff5252; }
-      .offer-form__actions__button.cancel {
-        background: rgba(255, 255, 255, 0.87);
-        color: #676767;
-        border: 1px solid #676767; }
-      .offer-form__actions__button:disabled {
+      padding: 8px 16px;
+      min-width: 88px;
+      min-height: 40px;
+      font-size: 0.9375rem;
+      text-transform: uppercase;
+      line-height: 1.4em;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500; }
+      .offer-form__actions .submit-button:disabled {
         opacity: 0.5;
         cursor: default; }
+    .offer-form__actions__button {
+      margin: 0 10px; }

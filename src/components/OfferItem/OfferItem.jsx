@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
-import { DEFAULT_ITEM, REGEXP } from 'constants';
-import { isDataValid, getInvalidData } from 'constants';
+import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
+import { DEFAULT_ITEM, REGEXP } from 'constants/index';
+import { isDataValid, getInvalidData } from 'services';
 import categories from 'mocks/categories.json';
 import currencies from 'mocks/currencies.json';
 import brands from 'mocks/brands.json';
@@ -10,7 +12,7 @@ import 'components/OfferItem/OfferItem.scss';
 const cloneDeep = require('lodash.clonedeep');
 const set = require('lodash.set');
 
-export default class extends Component {
+export class OfferItem extends Component {
 
   static propTypes = {
     item: PropTypes.object.isRequired,
@@ -27,7 +29,7 @@ export default class extends Component {
     super(props);
 
     this.state = {
-      item: Object.assign(cloneDeep(DEFAULT_ITEM), props.item),
+      item: Object.assign(cloneDeep(DEFAULT_ITEM), props.item || {}),
       isValid: false,
       title: props.strategy === 'create' ? 'Create offer' : 'Update offer'
     };
@@ -81,7 +83,7 @@ export default class extends Component {
   }
 
   onSubmit(event) {
-    const { item, strategy, create, update } = this.props;
+    const { strategy, create, update } = this.props;
     const { isValid, item } = this.state;
 
     event.preventDefault();
@@ -95,6 +97,7 @@ export default class extends Component {
         break;
       case 'update': update(item);
         break;
+      default:
     }
   }
 
@@ -122,6 +125,7 @@ export default class extends Component {
               helperText={invalid.name}
               onChange={::this.handleChange('name')}
               required
+              className="offer-form__field"
             />
             <TextField
               key={`${id}-productImagePointer.itemName`}
@@ -132,15 +136,17 @@ export default class extends Component {
               onChange={::this.handleChange('productImagePointer.itemName')}
               pattern={REGEXP.url}
               required
+              className="offer-form__field"
             />
             <TextField
               key={`${id}-category`}
               select
               label="Category"
-              value={item.name}
+              value={item.category}
               error={!!invalid.category}
               helperText={invalid.category}
               onChange={::this.handleChange('category')}
+              className="offer-form__field"
             >
               {categories.map(next => (
                 <MenuItem key={next.key} value={next.value}>
@@ -156,6 +162,7 @@ export default class extends Component {
               helperText={invalid.productName}
               onChange={::this.handleChange('productName')}
               required
+              className="offer-form__field"
             />
             <TextField
               key={`${id}-productBrand`}
@@ -165,6 +172,7 @@ export default class extends Component {
               error={!!invalid.productBrandy}
               helperText={invalid.productBrand}
               onChange={::this.handleChange('productBrand')}
+              className="offer-form__field"
             >
               {brands.map(next => (
                 <MenuItem key={next.key} value={next.value}>
@@ -180,25 +188,28 @@ export default class extends Component {
               helperText={invalid.retailerUrl}
               onChange={::this.handleChange('retailerUrl')}
               pattern={REGEXP.url}
+              className="offer-form__field"
             />
             <div className="field-price">
               <TextField
                 key={`${id}-originalPrice.amount`}
-                number
+                type="number"
                 label="Original price amount"
                 value={item.originalPrice.amount}
                 error={!!invalid.originalPrice && !!invalid.originalPrice.amount}
                 helperText={!!invalid.originalPrice && invalid.originalPrice.amount}
                 onChange={::this.handleChange('originalPrice.amount')}
+                className="offer-form__field field-price"
               />
               <TextField
                 key={`${id}-originalPrice.currencyCode`}
                 select
-                label="Original price currency"
+                label="Currency"
                 value={item.originalPrice.currencyCode}
                 error={!!invalid.originalPrice && !!invalid.originalPrice.currencyCode}
                 helperText={!!invalid.originalPrice && invalid.originalPrice.currencyCode}
                 onChange={::this.handleChange('originalPrice.currencyCode')}
+                className="offer-form__field field-currency"
               >
                 {currencies.map(next => (
                   <MenuItem key={next.key} value={next.value}>
@@ -209,22 +220,24 @@ export default class extends Component {
             </div>
             <div className="field-price">
               <TextField
-                key={`${id}-originalPrice.amount`}
-                number
-                label="Original price amount"
-                value={item.originalPrice.amount}
-                error={!!invalid.originalPrice && !!invalid.originalPrice.amount}
-                helperText={!!invalid.originalPrice && invalid.originalPrice.amount}
-                onChange={::this.handleChange('originalPrice.amount')}
+                key={`${id}-reducedPrice.amount`}
+                type="number"
+                label="Reduced price amount"
+                value={item.reducedPrice.amount}
+                error={!!invalid.reducedPrice && !!invalid.reducedPrice.amount}
+                helperText={!!invalid.reducedPrice && invalid.reducedPrice.amount}
+                onChange={::this.handleChange('reducedPrice.amount')}
+                className="offer-form__field field-price"
               />
               <TextField
                 key={`${id}-reducedPrice.currencyCode`}
                 select
-                label="Reduced price currency"
+                label="Currency"
                 value={item.reducedPrice.currencyCode}
                 error={!!invalid.reducedPrice && !!invalid.reducedPrice.currencyCode}
                 helperText={!!invalid.reducedPrice && invalid.reducedPrice.currencyCode}
                 onChange={::this.handleChange('reducedPrice.currencyCode')}
+                className="offer-form__field field-currency"
               >
                 {currencies.map(next => (
                   <MenuItem key={next.key} value={next.value}>
@@ -235,30 +248,36 @@ export default class extends Component {
             </div>
             <TextField
               key={`${id}-description`}
+              multiline
+              rows="3"
+              rowsMax="24"
               label="Description"
               value={item.description}
               error={!!invalid.description}
               helperText={invalid.description}
               onChange={::this.handleChange('description')}
+              className="offer-form__field field-description"
             />
           </div>
           <div className="offer-form__actions">
-            <button
-              className="offer-form__actions__button cancel"
-              onClick={::this.onCancel}
-            >Cancel</button>
-            <input
+            <Button
+              color="secondary"
               className="offer-form__actions__button"
+              onClick={::this.onCancel}
+            >Cancel</Button>
+            <input
+              className="offer-form__actions__button submit-button"
               type="submit"
               value="Submit"
               disabled={!isValid}
             />
             {
               strategy === 'update' ?
-              <button
-                className="offer-form__actions__button remove"
+              <Button
+                color="secondary"
+                className="offer-form__actions__button"
                 onClick={::this.onRemove}
-              >Remove</button>
+              >Remove</Button>
               :
               ''
             }

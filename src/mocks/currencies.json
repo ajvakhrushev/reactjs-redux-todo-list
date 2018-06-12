@@ -6,22 +6,22 @@
   },
   {
     "key": "e4a2d2c2-6c9b-11e8-adc0-fa7ae01bbebc",
-    "value": "USD",
+    "value": "$",
     "label": "$"
   },
   {
     "key": "e808b742-6c9b-11e8-adc0-fa7ae01bbebc",
-    "value": "EUR",
+    "value": "€",
     "label": "€"
   },
   {
     "key": "eb30879c-6c9b-11e8-adc0-fa7ae01bbebc",
-    "value": "GBP",
+    "value": "£",
     "label": "£"
   },
   {
     "key": "f2f1f75e-6c9b-11e8-adc0-fa7ae01bbebc",
-    "value": "RUB",
+    "value": "₽",
     "label": "₽"
   }
 ]

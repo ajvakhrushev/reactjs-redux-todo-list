@@ -9,14 +9,14 @@
     "productBrand": "Acer",
     "reducedPrice": {
       "amount":888,
-      "currencyCode":"USD"
+      "currencyCode":"$"
     },
     "originalPrice": {
       "amount":999,
-      "currencyCode":"USD"
+      "currencyCode":"$"
     },
     "productImagePointer": {
-      "itemName":"http://lorempixel.com/240/320"
+      "itemName":"http://via.placeholder.com/384x216"
     }
   },
   {
@@ -27,15 +27,35 @@
     "retailerUrl": "https://www.apple.com/macos",
     "productBrand": "Apple",
     "reducedPrice":{
-       "amount":1999,
-       "currencyCode":"USD"
+       "amount":1629,
+       "currencyCode":"$"
     },
     "originalPrice":{
        "amount":1998,
-       "currencyCode":"USD"
+       "currencyCode":"$"
     },
     "productImagePointer":{
-       "itemName":"http://loremflickr.com/240/320"
+       "itemName":"http://via.placeholder.com/384x216"
+    }
+  },
+  {
+    "id":"0cb7bb1a-6d8c-11e8-adc0-fa7ae01bbebc",
+    "name":"Nexus 5",
+    "category":"smartPhones",
+    "description": "Nexus 5 (codenamed Hammerhead) is an Android smartphone manufactured by LG Electronics for Google. Co-developed with and marketed by Google Inc. as part of its Nexus line of flagship devices and unveiled on October 31, 2013, it is a successor to the Nexus 4. Nexus 5 served as the launch device for Android 4.4 \"KitKat\", which introduced a refreshed interface, performance improvements, increased Google Now integration, better battery life and other features.",
+    "productName":"Nexus 5 LG",
+    "retailerUrl":"https://www.apple.com/macos",
+    "productBrand":"LG",
+    "reducedPrice":{
+       "amount":200,
+       "currencyCode":"$"
+    },
+    "originalPrice":{
+       "amount":350,
+       "currencyCode":"$"
+    },
+    "productImagePointer":{
+       "itemName":"http://via.placeholder.com/384x216"
     }
   }
 ]

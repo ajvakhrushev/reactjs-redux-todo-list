@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import * as actions from 'actions';
-import { OfferList } from 'components';
+import { OfferList as OfferListComponent } from 'components';
 import 'components/OfferList/OfferList.scss';
 
 const mapStateToProps = (state) => {
@@ -13,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({})
 
-export default connect(
+export const OfferList = connect(
   mapStateToProps, 
   mapDispatchToProps
-)(OfferList);
+)(OfferListComponent);

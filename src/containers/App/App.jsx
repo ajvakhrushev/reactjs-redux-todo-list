@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import 'containers/App/App.scss';
 
-class App extends Component {
+class AppClass extends Component {
   
   static propTypes = {
     children: PropTypes.node
-  }
-
-  constructor(props) {
-    super(props);
   }
 
   render() {
@@ -22,10 +19,15 @@ class App extends Component {
     return (
       <div>
         <AppBar position="static">
-          <Toolbar>
-            <Button color="inherit" to={'/home'}>Home</Button>
-            <Button color="inherit" to={'/offer/list'}>Offers</Button>
-            <Button color="inherit" to={'/offer/create'}>Create offer</Button>
+          <Toolbar className="header-nav">
+            <nav>
+              <Link to={'/offer/list'}>
+                <Button color="inherit">Offers</Button>
+              </Link>
+              <Link to={'/offer/create'}>
+                <Button color="inherit">Create offer</Button>
+              </Link>
+            </nav>
           </Toolbar>
         </AppBar>
         <div className="content">
@@ -39,7 +41,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({});
 const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(
+export const App = connect(
   mapStateToProps,
   mapDispatchToProps  
-)(App);
+)(AppClass);

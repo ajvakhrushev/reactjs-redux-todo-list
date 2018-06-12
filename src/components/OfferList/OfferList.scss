@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import 'styles/variables.scss';
 
 .offer-list {
   display: flex;
@@ -13,7 +13,9 @@
 
   &__container {
     display: block;
-    max-width: 800px;
+    width: 100%;
+    mix-width: $xs-width;
+    max-width: $ls-width;
     margin: 0 auto 0 auto;
   }
 
@@ -23,34 +25,18 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    margin: 0 0 20px 0;
-
-    &__button {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      border: none;
-      border-radius: 2px;
-      background: $color-blue;
-      color: $color-white;
-      padding: 0 10px;
-      height: 32px;
-      text-decoration: none;
-
-      &:disabled {
-        opacity: 0.3;
-      }
-    }
-
+    margin: 10px 0;
   }
 
   &__items {
     display: flex;
     flex-container: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+
+    @media($maxWidthLS) {
+      justify-content: center;
+    }
+
   }
 
 }
