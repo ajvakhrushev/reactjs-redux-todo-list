@@ -1,9 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import OfferListItem from 'components/OfferListItem/OfferListItem.jsx';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { OfferListItem } from 'components/OfferListItem/OfferListItem.jsx';
+import listData from 'mocks/list.json';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<OfferListItem />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('components/OfferListItem', () => {
+  configure({ adapter: new Adapter() });
+
+  it('renders without crashing', () => {
+    shallow(<OfferListItem data={listData[0]} />);
+  });
 });

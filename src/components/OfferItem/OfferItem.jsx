@@ -15,7 +15,7 @@ const set = require('lodash.set');
 export class OfferItem extends Component {
 
   static propTypes = {
-    item: PropTypes.object.isRequired,
+    item: PropTypes.object,
     strategy: PropTypes.string
   }
 

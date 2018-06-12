@@ -64,6 +64,7 @@ const styles = (theme) => ({
 class OfferListItemClass extends Component {
 
   static propTypes = {
+    data: PropTypes.object,
     classes: PropTypes.object.isRequired
   }
 
