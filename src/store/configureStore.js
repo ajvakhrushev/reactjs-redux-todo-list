@@ -7,7 +7,7 @@ import rootReducer from 'reducers';
 export default function configureStore(initialState, history) {
   const middlewares = [routerMiddleware(history)];
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'development') {
     middlewares.unshift(createLogger());
   }
 

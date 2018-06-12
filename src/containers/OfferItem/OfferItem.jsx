@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import * as actions from 'actions';
-import { URL_PREFIX } from 'constants/index';
 import { OfferItem as OfferItemComponent } from 'components/OfferItem/OfferItem.jsx';
 import 'components/OfferItem/OfferItem.scss';
 
@@ -15,7 +14,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const url = `${URL_PREFIX}/offer/list`;
+  const url = '/offer/list';
 
   return {
     create: (data = {}) => {

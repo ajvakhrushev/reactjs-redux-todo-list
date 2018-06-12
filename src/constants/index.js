@@ -22,5 +22,3 @@ export const DEFAULT_ITEM = {
 export const REGEXP = {
   url: /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/i
 };
-
-export const URL_PREFIX = process.env.NODE_ENV === 'production' ? '/reactjs-redux-todo-list' : '';
