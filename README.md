@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Demo
+
+Check demo out here [http://reactjs-redux-todo-list.zzz.com.ua](http://reactjs-redux-todo-list.zzz.com.ua)
+
 ## Available Scripts
 
 In the project directory, you can run:

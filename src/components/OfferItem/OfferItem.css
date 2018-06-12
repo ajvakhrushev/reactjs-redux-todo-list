@@ -1,73 +1,69 @@
-.offer-form {
+.offer-list__container .offer-form {
   display: flex;
   flex-direction: column;
   width: 100%;
   box-sizing: border-box; }
   @media (max-width: 760px) {
-    .offer-form {
+    .offer-list__container .offer-form {
       padding: 0 5px; } }
-  .offer-form__title {
+  .offer-list__container .offer-form__title {
     margin: 10px 0;
     padding: 10px;
     font-size: 24px; }
-  .offer-form__fields {
+  .offer-list__container .offer-form__fields {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between; }
-  .offer-form .field-price {
+  .offer-list__container .offer-form .field-price {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     min-width: 310px; }
     @media (max-width: 640px) {
-      .offer-form .field-price {
+      .offer-list__container .offer-form .field-price {
         min-width: 100%; } }
-    .offer-form .field-price .offer-form__field {
+    .offer-list__container .offer-form .field-price .offer-form__field {
       display: flex;
       flex-direction: row; }
-      .offer-form .field-price .offer-form__field.field-price {
+      .offer-list__container .offer-form .field-price .offer-form__field.field-price {
         display: flex;
         flex: 1 1 180px;
         min-width: 180px;
         padding-right: 20px; }
-      .offer-form .field-price .offer-form__field.field-currency {
+        .offer-list__container .offer-form .field-price .offer-form__field.field-price > div {
+          width: 100%; }
+      .offer-list__container .offer-form .field-price .offer-form__field.field-currency {
         display: flex;
         flex: 0 0 100px;
         min-width: 100px; }
-      .offer-form .field-price .offer-form__field [class^="MuiInput"] {
-        width: 100%; }
-  .offer-form__field {
+        .offer-list__container .offer-form .field-price .offer-form__field.field-currency > div {
+          width: 100%; }
+  .offer-list__container .offer-form__field {
     margin: 10px 0;
     min-width: 310px; }
     @media (max-width: 640px) {
-      .offer-form__field {
+      .offer-list__container .offer-form__field {
         min-width: 100%; } }
-    .offer-form__field[class^='MuiFormControl'] {
-      margin: 10px 0;
-      min-width: 310px; }
-      @media (max-width: 640px) {
-        .offer-form__field[class^='MuiFormControl'] {
-          min-width: 100%; } }
-    .offer-form__field.field-description {
+    .offer-list__container .offer-form__field.field-description {
       display: block;
       min-width: 100%;
       width: 100%; }
-      .offer-form__field.field-description [class^='MuiInput'] {
+      .offer-list__container .offer-form__field.field-description > div {
         min-width: 100%;
         width: 100%; }
-      .offer-form__field.field-description textarea {
+      .offer-list__container .offer-form__field.field-description textarea {
         min-width: 100%;
         width: 100%; }
-  .offer-form__actions {
+  .offer-list__container .offer-form__actions {
     display: flex;
     flex-direction: row;
     margin: 20px 0; }
     @media (max-width: 760px) {
-      .offer-form__actions {
+      .offer-list__container .offer-form__actions {
         justify-content: space-between; } }
-    .offer-form__actions .submit-button {
+    .offer-list__container .offer-form__actions .submit-button {
       box-sizing: border-box;
       display: flex;
       justify-content: center;
@@ -85,8 +81,8 @@
       line-height: 1.4em;
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       font-weight: 500; }
-      .offer-form__actions .submit-button:disabled {
+      .offer-list__container .offer-form__actions .submit-button:disabled {
         opacity: 0.5;
         cursor: default; }
-    .offer-form__actions__button {
+    .offer-list__container .offer-form__actions__button {
       margin: 0 10px; }
