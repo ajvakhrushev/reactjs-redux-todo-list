@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { PageNotFound } from 'components';
 import { App, OfferList, OfferItem } from 'containers';
+import { URL_PREFIX } from 'constants/index';
 
 const AppWithRouter = withRouter(App);
 const OfferListWithRouter = withRouter(OfferList);
