@@ -1,0 +1,11 @@
+.page-not-found {
+  display: block;
+  width: 100%;
+  mix-width: 320px;
+  max-width: 760px;
+  margin: 0 auto 0 auto; }
+  .page-not-found span {
+    display: flex;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 24px; }

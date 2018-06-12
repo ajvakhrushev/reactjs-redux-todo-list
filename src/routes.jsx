@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router';
+import { Route, NotFoundRoute, Redirect, Switch } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { PageNotFound } from 'components';
 import { App, OfferList, OfferItem } from 'containers';
@@ -15,7 +15,7 @@ export default (
       <Route path="/offer/list" component={OfferListWithRouter} />
       <Route path="/offer/create" component={OfferItemWithRouter} />
       <Route path="/offer/:id" component={OfferItemWithRouter} />
-      <Redirect from="/" to="/offer/list" />
+      <Redirect exact from="/" to="/offer/list" />
       <Route path="*" component={PageNotFoundWithRouter} />
     </Switch>
   </AppWithRouter>
