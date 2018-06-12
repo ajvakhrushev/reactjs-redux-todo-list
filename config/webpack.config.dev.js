@@ -189,7 +189,7 @@ module.exports = {
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: false,
                   includePaths: [path.resolve(__dirname, '..', 'src'), path.resolve(__dirname, '..', 'node_modules')]
                 }
               },
