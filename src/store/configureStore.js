@@ -5,14 +5,17 @@ import { autoRehydrate } from 'redux-persist';
 import rootReducer from 'reducers';
 
 export default function configureStore(initialState, history) {
+  const middlewares = [routerMiddleware(history)];
+
+  if (process.env.NODE_ENV === 'production') {
+    middlewares.unshift(createLogger());
+  }
+
   const store = createStore(
     rootReducer,
     initialState,
     compose(
-      applyMiddleware(
-        createLogger(),
-        routerMiddleware(history)
-      ),
+      applyMiddleware(...middlewares),
       autoRehydrate()
     )
   );

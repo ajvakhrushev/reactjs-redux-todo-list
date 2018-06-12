@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, NotFoundRoute, Redirect, Switch } from 'react-router';
+import { Route, Redirect, Switch } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { PageNotFound } from 'components';
 import { App, OfferList, OfferItem } from 'containers';
