@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
+import { URL_PREFIX } from 'constants/index';
 import 'components/OfferListItem/OfferListItem.scss';
 
 const styles = (theme) => ({
@@ -131,7 +132,7 @@ class OfferListItemClass extends Component {
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
             <Button size="small" color="primary">
-              <Link to={`/offer/${id}`}>Edit offer</Link>
+              <Link to={`${URL_PREFIX}/offer/${id}`}>Edit offer</Link>
             </Button>
             {
               description ?

@@ -12,11 +12,11 @@ const PageNotFoundWithRouter = withRouter(PageNotFound);
 export default (
   <AppWithRouter>
     <Switch>
-      <Route path="/reactjs-redux-todo-list/offer/list" component={OfferListWithRouter} />
-      <Route path="/reactjs-redux-todo-list/offer/create" component={OfferItemWithRouter} />
-      <Route path="/reactjs-redux-todo-list/offer/:id" component={OfferItemWithRouter} />
-      <Redirect exact from="/" to="/reactjs-redux-todo-list/offer/list" />
-      <Route path="/reactjs-redux-todo-list/*" component={PageNotFoundWithRouter} />
+      <Route path={`${URL_PREFIX}/offer/list`} component={OfferListWithRouter} />
+      <Route path={`${URL_PREFIX}/offer/create`} component={OfferItemWithRouter} />
+      <Route path={`${URL_PREFIX}/offer/:id`} component={OfferItemWithRouter} />
+      <Redirect exact from={URL_PREFIX} to={`${URL_PREFIX}/offer/list`} />
+      <Route path={`${URL_PREFIX}/*`} component={PageNotFoundWithRouter} />
     </Switch>
   </AppWithRouter>
 );
