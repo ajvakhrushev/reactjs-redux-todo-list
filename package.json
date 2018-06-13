@@ -1,5 +1,11 @@
 {
   "name": "reactjs-redux-todo-list",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
