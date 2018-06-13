@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 const entryPoint = `${__dirname}/index.html`;
 
 app.use('/static',  express.static(`${__dirname}/static`));
